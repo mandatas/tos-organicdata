@@ -2,21 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Redirección completada</title>
+  <title>Autenticación TikTok</title>
 </head>
 <body>
-  <h1>¡Autenticación completada!</h1>
-  <p>Gracias por autorizar OrganicDataApp con tu cuenta de TikTok.</p>
-  <p>Podés cerrar esta pestaña y volver a la aplicación.</p>
+  <h1>¡Conexión exitosa con TikTok!</h1>
+  <p id="message">Procesando código...</p>
 
-  <!-- Si estás manejando el "code" desde el frontend, podés leerlo así -->
   <script>
     const params = new URLSearchParams(window.location.search);
     const code = params.get('code');
     const state = params.get('state');
 
+    const message = code
+      ? `Código recibido: ${code}`
+      : `No se encontró ningún código en la URL`;
+
+    document.getElementById('message').innerText = message;
+
     console.log("Código recibido de TikTok:", code);
-    // Aquí podrías redirigir, almacenarlo temporalmente, o enviarlo a tu backend
   </script>
 </body>
 </html>
