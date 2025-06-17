@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>OrganicDataApp</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrganicDataApp - Analiza tu TikTok</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header, footer {
+      background-color: #222;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    main {
+      padding: 2em;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #111;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background-color: #ff0050;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1em;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    ul {
+      padding-left: 1.2em;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido a OrganicDataApp</h1>
-  <p>Conectate con TikTok para analizar tu contenido.</p>
-  <a href="https://www.tiktok.com/v2/auth/authorize?client_key=sbaw3bbgumwov9d1nv&response_type=code&scope=user.info.basic%2Cuser.info.open_id%2Cuser.info.profile%2Cuser.info.stats%2Cvideo.list&redirect_uri=https%3A%2F%2Fmimaxdc.xyz%2Fcallback&state=123&from_www=1">
-    <button>Iniciar sesión con TikTok</button>
-  </a>
+
+  <header>
+    <h1>OrganicDataApp</h1>
+    <p>Herramienta de análisis para creadores de TikTok</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>¿Qué es OrganicDataApp?</h2>
+      <p>Una app que te permite analizar tu contenido orgánico en TikTok. Conectate con tu cuenta y accedé a estadísticas detalladas.</p>
+      <a class="button" href="https://www.tiktok.com/v2/auth/authorize?client_key=sbaw3bbgumwov9d1nv&response_type=code&scope=user.info.basic%2Cuser.info.open_id%2Cuser.info.profile%2Cuser.info.stats%2Cvideo.list&redirect_uri=https%3A%2F%2Fmimaxdc.xyz%2Fcallback&state=123&from_www=1">
+        Iniciar sesión con TikTok
+      </a>
+    </section>
+
+    <section>
+      <h2>Características</h2>
+      <ul>
+        <li>Acceso a estadísticas de videos</li>
+        <li>Análisis de rendimiento orgánico</li>
+        <li>Identificación de tendencias en tu contenido</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Privacidad y seguridad</h2>
+      <p>Solo accedemos a los datos autorizados por vos a través de TikTok. Leé nuestra <a href="/privacy.html">Política de Privacidad</a> para más información.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 OrganicDataApp - Todos los derechos reservados</p>
+    <p><a href="/privacy.html" style="color: #aaa;">Política de privacidad</a></p>
+  </footer>
+
 </body>
 </html>
