@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Autenticación TikTok</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conexión con TikTok</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #111;
+    }
+
+    p {
+      color: #555;
+      margin-top: 1em;
+    }
+
+    .spinner {
+      margin: 1.5em auto;
+      width: 30px;
+      height: 30px;
+      border: 4px solid #ccc;
+      border-top: 4px solid #ff0050;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Conexión exitosa con TikTok!</h1>
-  <p id="message">Procesando código...</p>
+  <div class="container">
+    <h1>Procesando autenticación...</h1>
+    <div class="spinner"></div>
+    <p id="message">Estamos validando tu acceso con TikTok.</p>
+  </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const code = params.get('code');
-    const state = params.get('state');
 
-    const message = code
-      ? `Código recibido: ${code}`
-      : `No se encontró ningún código en la URL`;
-
-    document.getElementById('message').innerText = message;
-
-    console.log("Código recibido de TikTok:", code);
+    if (code) {
+      // Aquí podrías redirigir o iniciar una llamada a tu backend si lo tuvieras
+      console.log("Código OAuth recibido:", code);
+    } else {
+      document.getElementById('message').innerText = "No se pudo autenticar correctamente.";
+    }
   </script>
 </body>
 </html>
